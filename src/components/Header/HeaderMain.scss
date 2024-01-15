@@ -1,0 +1,166 @@
+@import "../Mixins.scss";
+@import "../Variables.scss";
+
+*,
+*::after,
+*::before {
+    @include box-sizing;
+}
+
+a {
+    @include a-reset;
+}
+
+body {
+    @include font-family_main;
+    
+}
+
+.header-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    
+   
+}
+
+.hover-decor {
+    &:hover {
+        color: $t-color-2;
+    }
+}
+
+.header-main {
+    &__wrapper {
+        background-image: linear-gradient(to bottom right, #383c40f7, #18150f);
+        padding-top: 40px;
+        @include border-line;
+        
+        
+
+    }
+    &__content{
+        @include flex-s-btwn;
+        background-color: #82859638;
+        position: sticky;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 0 10px;
+         
+    }
+        
+    
+    &__popular-btn  {
+        color: $t-color-0;
+        border: 1px solid white;
+        border-radius: 30px;
+        @include btn-size (130px, 35px);
+        padding: 0 25px;
+
+    }
+    &__content-right {
+        @include flex-s-btwn;
+
+    }
+    &__content-left {
+        @include flex-s-btwn(center);
+        padding-right: 30px;
+
+    }
+   
+}
+
+
+
+.company  {
+    @include vr-centration-flex;
+
+
+    &__logo {
+        height: 40px;
+        width: 40px;
+        margin-right: 17px;
+    }
+    &__name {
+        @include font (700, 35px, 60px, $t-color-0);
+        padding-right: 90px;
+
+    }
+}
+
+
+
+.navmenu  {
+    @include flex-s-btwn(center);
+    
+
+    &__items  {
+        @include flex-s-btwn(center);
+        padding-right: 20px;
+        position: relative;
+        
+    }
+
+    &__item {
+        color: $t-color-0;
+        @include font (400, 18px, 25px, $t-color-0);
+        padding-right: 30px;
+    }
+
+    &__item--decor {
+        &::before {
+            content: url(../images/substract.png);
+            position: absolute;
+            top: 10px
+            
+        }
+    }
+    &__search  {
+        @include flex-s-btwn(center);
+         height: 35px;
+        border-radius: 30px;
+        padding-right: 30px;
+        cursor: text;
+        position: relative;
+        background-color: #ffffff1a;
+    }
+    &__search-inpt {
+        font-family: inherit;
+        background-clip: padding-box;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+        width: 220px;
+        padding-left: 50px;
+        @include font (400, 18px, 21px, $t-color-4);
+        background-color: transparent;
+        
+    
+
+        &::placeholder {
+            padding-right: 10px;
+            @include font (400, 18px, 21px, $t-color-1);
+        @include font-family_main; 
+        }
+    }
+
+    &__search-loupe {
+        position: absolute;
+        left: 10px;
+        cursor: pointer;
+        
+    }
+    &__more  {
+        margin-top: 6px;
+
+    }
+}
+.watch-now-btn  {
+    
+        border: 1px solid #d8a920;
+        border-radius: 30px;
+        @include btn-size (170px, 50px);
+        padding: 0 25px;
+        @include font (400, 18px, 25px, $t-color-0);
+
+}
+
